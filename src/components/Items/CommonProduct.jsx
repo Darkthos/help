@@ -3,10 +3,10 @@ import Description from "../auth/Text/Description";
 import Price from "../auth/Text/Price";
 import Favorite from "../auth/Favorite";
 
-function BestProduct({ id, src, text, price, favorite }) {
+function CommonProduct({ id, src, text, price, favorite }) {
   return (
     <ProductBox>
-      <BestProductImg id={id} src={src} />
+      <CommonProductImg id={id} src={src} />
       <ProductTextBox>
         <Description text={text + " 팝니다"} />
         <Price price={price} />
@@ -16,26 +16,26 @@ function BestProduct({ id, src, text, price, favorite }) {
   );
 }
 
-export default BestProduct;
+export default CommonProduct;
 export const ProductBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
-export const BestProductImg = styled.img`
+export const CommonProductImg = styled.img`
   @media screen and (min-width: 1201px) {
-    width: 282px;
+    width: 221px;
   }
-  @media screen and (min-width: 744px) and (max-width: 1200px) {
-    width: 336px;
+  @media screen and (min-width: 744px) {
+    width: 221px;
   }
-  width: 336px;
-
+  aspect-ratio: 1 / 1;
+  min-width: 168px;
+  width: 100%;
   border-radius: 19.46px;
 `;
 export const ProductTextBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 24px;
 `;
